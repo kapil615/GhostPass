@@ -72,13 +72,6 @@ The round icon with the character "雨" (top-right) toggles the Matrix rain anim
 5. **Click Generate** to create your obfuscated string
 6. **Copy to clipboard** and use wherever needed
 
-## 💻 Installation as PWA
-
-1. Open GhostPass in a supported browser (Chrome, Edge, Firefox, Safari)
-2. Look for the "Install" button in the address bar
-3. Click to install as a standalone app
-4. Access from your desktop/home screen like any other app
-
 ## 🔒 Privacy & Security
 
 - **No network requests** - everything runs locally in your browser
@@ -86,13 +79,6 @@ The round icon with the character "雨" (top-right) toggles the Matrix rain anim
 - **No analytics or tracking** - completely private
 - **Open source** - inspect the code yourself
 - **Deterministic** - same input always produces same output
-
-
-### Browser Support
-- **Modern browsers** with ES6+ support
-- **PWA features** require HTTPS (or localhost)
-- **Clipboard API** with fallback for older browsers
-- **Responsive design** for mobile and desktop
 
 ### Performance
 - **Lightweight** - total size under 50KB
@@ -121,4 +107,5 @@ GhostPass provides **obfuscation, not encryption**. It's designed for:
 - Protection against determined attackers
 
 For true security, use proper encryption and password managers.
+
 
