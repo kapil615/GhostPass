@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GhostPass - Privacy-First Password Obfuscation</title>
+    <meta name="description"
+        content="Lightweight, offline-first password obfuscation tool with glassmorphism UI and Matrix rain aesthetic">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+    <meta name="theme-color" content="#00ff41">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <canvas id="matrix-rain" class="matrix-canvas"></canvas>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="title">GhostPass</h1>
+            <p class="subtitle">Privacy-First Password Obfuscation</p>
+            <button id="matrix-toggle" class="matrix-toggle" title="Toggle Matrix Rain"
+                aria-label="Toggle Matrix Rain">雨</button>
+        </header>
+
+        <main class="main-content">
+            <div class="glass-card">
+                <div class="input-section">
+                    <label for="input-phrase" class="input-label">Enter your phrase:</label>
+                    <div class="input-container">
+                        <input type="password" id="input-phrase" class="input-field" placeholder="e.g., Kolkata@2025"
+                            maxlength="50" autocomplete="off" spellcheck="false">
+                        <button id="toggle-visibility" class="toggle-visibility" title="Show input (Unlock)"
+                            aria-label="Show input text">
+                            🔒
+                        </button>
+                    </div>
+                    <div class="input-meta">
+                        <span id="char-counter" class="char-counter">0/50</span>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <label class="toggle-container">
+                        <input type="checkbox" id="url-safe-toggle">
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-label">URL-Safe Mode</span>
+                    </label>
+                    <div class="button-group">
+                        <button id="generate-btn" class="generate-btn">
+                            <span class="btn-icon">👻</span>
+                            <span class="btn-text">Generate</span>
+                        </button>
+                        <button id="clear-btn" class="clear-btn">
+                            <span class="btn-icon">🗑️</span>
+                            <span class="btn-text">Clear</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="output-section" id="output-section" style="display: none;">
+                    <label for="output-result" class="output-label">Obfuscated Result:</label>
+                    <div class="output-container">
+                        <input type="text" id="output-result" class="output-field" readonly
+                            placeholder="Your obfuscated string will appear here...">
+                        <button id="copy-btn" class="copy-btn" title="Copy to clipboard" aria-label="Copy to clipboard">
+                            📋
+                        </button>
+                    </div>
+                    <div class="output-meta">
+                        <span id="length-counter" class="length-counter">Length: 0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card glass-card">
+                <h3>How it works</h3>
+                <p>GhostPass applies deterministic transformations to your input. Same input always produces the same
+                    output. This is obfuscation, not encryption.</p>
+                <ul>
+                    <li>✨ Glassmorphism UI with neon effects</li>
+                    <li>🔒 Fully offline - no data sent anywhere</li>
+                    <li>🔄 Deterministic - same input = same output</li>
+                    <li>🌐 URL-safe mode for web compatibility</li>
+
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+    <script src="obfuscator.js"></script>
+    <script src="matrix.js"></script>
+    <script src="app.js"></script>
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => console.log('SW registered'))
+                    .catch(error => console.log('SW registration failed'));
+            });
+        }
+    </script>
+</body>
+
+</html>
