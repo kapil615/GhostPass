@@ -87,19 +87,6 @@ The round icon with the character "雨" (top-right) toggles the Matrix rain anim
 - **Open source** - inspect the code yourself
 - **Deterministic** - same input always produces same output
 
-## 🛠️ Technical Details
-
-### Files Structure
-```
-├── index.html          # Main HTML structure
-├── styles.css          # Glassmorphism UI styles
-├── obfuscator.js       # Core obfuscation algorithm
-├── matrix.js           # Matrix rain animation
-├── app.js              # Main application logic
-├── manifest.json       # PWA manifest
-├── sw.js               # Service worker for offline support
-└── README.md           # This file
-```
 
 ### Browser Support
 - **Modern browsers** with ES6+ support
@@ -113,20 +100,6 @@ The round icon with the character "雨" (top-right) toggles the Matrix rain anim
 - **Memory efficient** Matrix rain with cleanup
 - **Offline capable** with service worker caching
 
-## 🎨 Customization
-
-The app uses CSS custom properties for easy theming:
-
-```css
-:root {
-    --neon-green: #00ff41;
-    --neon-cyan: #00ffff;
-    --dark-bg: #0a0a0a;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-}
-```
-
 ## 🤝 Contributing
 
 1. Fork the repository
@@ -134,10 +107,6 @@ The app uses CSS custom properties for easy theming:
 3. Make your changes
 4. Test thoroughly
 5. Submit a pull request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## ⚠️ Disclaimer
 
@@ -153,6 +122,3 @@ GhostPass provides **obfuscation, not encryption**. It's designed for:
 
 For true security, use proper encryption and password managers.
 
----
-
-**Made with 👻 for privacy-conscious developers**
